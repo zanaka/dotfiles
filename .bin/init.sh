@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Check OS
-if [ "$(uname)" != "Darwssin" ] ; then
+if [ "$(uname)" != "Darwin" ] ; then
   echo "Not macOS!"
   exit 1
 fi
