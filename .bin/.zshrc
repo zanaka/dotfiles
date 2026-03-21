@@ -2,6 +2,9 @@
 # Kiro CLI pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/kiro-cli/shell/zshrc.pre.zsh"
 
+# XDG Base Directory
+[ -f "$HOME/.config/profile" ] && . "$HOME/.config/profile"
+
 typeset -U path PATH
 path=(
 	/opt/homebrew/bin(N-/)

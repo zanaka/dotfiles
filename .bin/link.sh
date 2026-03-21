@@ -34,3 +34,12 @@ sed -e "s/__GIT_USER_NAME__/$git_name/" \
     "$GITCONFIG_TEMPLATE" > "$GITCONFIG_DEST"
 
 echo "Created $GITCONFIG_DEST"
+
+# .config 配下のファイルをリンク
+CONFIG_SRC="$(cd "$(dirname "$0")/../.config" && pwd)"
+if [ -d "$CONFIG_SRC" ]; then
+    mkdir -p "$HOME/.config"
+    for entry in "$CONFIG_SRC"/* ; do
+        ln -fnsv "$entry" "$HOME/.config/$(basename "$entry")"
+    done
+fi
